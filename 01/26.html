@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <form>
+        <fieldset>
+            <!-- radio는 value값을 정해줘야한다, label을 쓰면 텍스트를 눌러도 선택가능-->
+            <p>피자 사이즈를 선택해주세요 </p>
+            <p><label>레귤러 <input type="radio" name="사이즈" value="레귤러"></label></p>
+            <p>라지 <input type="radio" name="사이즈" value="라지"></p>
+            <p>엑스라지 <input type="radio" name="사이즈" value="엑스라지"></p>
+
+            <hr>
+            <p>토핑을 선택해주세요</p>
+            <p><label>페퍼로니 <input type="checkbox" checked></label></p>
+            <p><label>파인애플 <input type="checkbox" disabled></label></p>
+            <p><label>불고기 <input type="checkbox"></label></p>
+            <p><label>고구마무스 <input type="checkbox" ></label></p>
+            <p><label>치즈 <input type="checkbox" name="topping" value="cheese"></label></p>
+            <p><label>갈릭비프 <input type="checkbox" name="topping" value="garlic beef"></label></p>
+
+            <button>주문</button>
+        </fieldset>
+        <fieldset>
+            <legend>성별</legend>
+            <label>남자<input type="radio" name="gender" value="male"></label>
+            <label>여자<input type="radio" name="gender" value="female" checked></label>
+            <!-- 위의 checked 같은 경우 boolean속성-->
+            <button>선택</button>
+        </fieldset>
+        <fieldset>
+            <input type="submit" value="서버로 데이터 전송">
+            <input type="reset" value="입력 데이터 초기화">
+            <input type="button" value="버튼" onclick="confirm('구글로 이동하시겠습니까?') ? location.href = 'https://www.google.com' : ''">
+            <button><img src="../img/free-icon-student-257787.png">친구신청 </button>
+            <button><i class="fa-solid fa-magnifying-glass" style="color: rgb(89, 226, 196);"></i>검색</button>
+            <!-- https://cdnjs.com/libraries/font-awesome-->
+            <!-- https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid-->
+            
+            <input type="file" multiple>
+            <input type="image" src="../img/free-icon-student-257787.png">
+            <!-- 인풋 타입 이미지 역할 >> submit-->
+        </fieldset>
+        <fieldset>
+            <select multiple name="size2">
+                <!-- 드롭다운--><!-- selected 체크드처럼 기본값-->
+                <option value="regular">레귤러</option>
+                <option value="large" selected>라지</option>
+            </select>
+            <hr>
+            <textarea cols="10" rows="10" readonly>
+                이용약관
+            1. 우유
+            2. 오이
+            </textarea>
+            
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .mx-auto {margin-left: auto; margin-right: 'IE=edge';}
+        .ml-auto {margin-left: auto;}
+        body {margin: 0; text-align: center;}
+        .img-wrap {width: 1920px; border: 1px solid;}
+        .img-wrap img{width: 100%; max-width: 700px;} /* 부모의 너비값에 맞춘다 */
+        img{width: 100%; max-width: 700px;}
+        /* padding 위에서부터 시계방향 */
+        .box {width: 100px; height: 100px; background: red; 
+            /* display: inline-block; */
+            /* margin: 20px auto 40px ;  */
+            /*상하 마진값이 다른 경우 더 큰쪽으로 적용*/
+            /*좌우 마진에 auto를 줄 경우 가운데 정렬.
+            왼쪽값만 수정해도 오른쪽값도 같이 적용*/
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="img-wrap"> -->
+        <img src="img/bg_size.png">
+    <!-- </div>     -->
+     <hr>
+     <div class="box box1 mx-auto"></div>
+     <div class="box box1 mx-auto"></div>
+     <div class="box box1 ml-auto"></div>
+     <div class="box box1"></div>
+     <div class="box box1"></div>
+     <div class="box box1"></div>
+     <div class="box box1"></div>
+     <div class="box box1"></div>
+     <div class="box box1"></div>
+     <div class="box box1"></div>
+     <div class="box box1"></div>
+     <div class="box box1"></div>
+    </body>
+</html>

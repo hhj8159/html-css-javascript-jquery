@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        * {font-family: 궁서;}
+        .btn-cancel-01 {}
+        .btn-cancel-02 {}
+        .btn-cancel-03 {}
+        [class|='btn-cancel']
+
+        [title] {color: red;}
+        [title='write'] {text-decoration: line-through;}
+        [title*='write'] {background: green;}
+
+        /* write라는 단어가 포함된 title속성 선택 (구분자 : -)*/ 
+        [title|='write'] {text-indent: 100px;}
+        /* write라는 단어가 포함된 title속성 선택 (구분자 : 공백)*/ 
+        [title~='write'] {font-size: 3em};
+
+        /* 가상클래스*/
+        a:link {color: green;}
+        a:visited {color: aqua;}
+        a:hover {color: brown;}
+        a:active {color: orange;}
+        a:focus {color: deeppink;}
+
+        /* 가상요소*/
+        /* 첫번째 요소, 마지막 요소, n번째 자식, n번째 타입, 이전, 이후*/
+        /* 1st 2nd 3rd 4th 5th*/
+        div :first-child {color: red !important;} /**/
+        div :last-child {color: blue;}
+        body div p:nth-child(2n) {color: green;}
+        div p:nth-of-type(2n) {color: purple;}
+        div p:nth-last-of-type(3) {color: orange;}
+        div p:nth-last-child(3n+1) {color: deeppink;}
+        p::before {content: '접두사';} /**/
+
+        /*div.cls#id {} /* 얘는 띄어쓰기 안함. 하면 자손취급*/
+        /* OS의 스타일 (ex : 고대비) */
+        /* 사용자의 스타일 */
+        /* 브라우저 기본 스타일 */
+
+
+        /*선택자 우선순위
+        전체 선택자(*)
+        type 선택자
+        가상 선택자
+        class 선택자
+        id 선택자
+        */
+
+        /* 1 */
+        [title='number'] {color: blueviolet; text-decoration: overline;}
+        [title*='number'] {background: rgb(255, 159, 111);}
+        [title~='number'] {font-family: 맑은 고딕;}
+        [title|='number'] {text-indent: 50px;}
+        
+        a:link {color: chartreuse;}
+        a:visited {color: blue;}
+        a:hover {color: brown;}
+        a:active {color: yellow;}
+        a:focus {color: teal;}
+
+        div :first-child {color: rgb(255, 0, 179) !important;}
+        div :last-child {color: slateblue;}
+        body div p:nth-child(4n) {color: rgb(25, 0, 255);}
+        div p:nth-of-type(3n) {color: cadetblue;}
+        div p:nth-last-child(2) {color: yellow;}
+        div p:nth-last-of-type(4) {color: black;}
+        p::before {content: 'before';}
+        p::after {content: 'after';}
+    </style>
+</head>
+<body>
+    <h3 title="header">제목</h3>
+    <p title="write addr">주소록 작성</p>    
+    <p title="write-tel">전화번호 작성</p>
+    <p title="write">건강기록부 작성</p>
+    <p>금전출납부 작성</p>
+
+    <p><a href="#">링크</a></p>
+
+    <div class="cls" id="id">
+        <h1>대제목</h1>
+        <p>문단1</p>
+        <p>문단2</p>
+        <p>문단3</p>
+        <p>문단4</p>
+        <p>문단5</p>
+        <p>문단6</p>        
+    </div>
+
+    <h2 title="header">숫자</h2>
+    <p title="number addr">주소록을 작성</p>
+    <p title="number-tel">전화번호를 작성</p>
+    <p title="number">건강기록부를 작성</p>
+    <p>금전출납부를 작성</p>
+    <p><a href="#">Link</a></p>
+
+    <div class="class" id="idclass">
+        <h1>넘버</h1>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>4</p>
+        <p>4</p>
+    </div>
+</body>
+</html>

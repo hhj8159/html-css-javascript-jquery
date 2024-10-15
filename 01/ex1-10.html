@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h3>이미지</h3>
+    <!-- img태그는 종료 태그가 없음, 인라인이지만 크기 지정 가능-->
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        alt="구글 로고">
+
+    <p>이미지 링크</p>
+    <a href="https://www.google.com">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        alt="구글 로고">
+    </a>
+
+    <!--
+    제시 가능 이미지 확장자
+    .bmp : 압축이 안되서 너무 크다, 투명불가
+    .gif 투명가능 8bit (RGBA), 여러 프레임 저장 가능 ex)움짤
+    .jpg 투명불가 24bit (RGB), 압축 기법에 대한 저작권
+    .png 투명가능 32bit (RGBA)
+    .webp 투명가능 32bit (RGBA)
+    -->
+
+    <h3>이미지 맵</h3>
+    <img src="C:\Users\tj\Downloads\pngtree-stage-game-level-map-design-for-arcade-computer-and-mobile-phone-picture-image_1607022.jpg"
+    alt usemap="#mymap">
+    <map name="mymap">
+        <area href="https://www.naver.com" title="네이버" shape="rect" coords="500,500,700,700">
+        <area href="https://www.google.com" title="구글" shape="circle" coords="600,300,100">
+        <area shape="poly" alt="" title="다음"  coords="211,570,56,675,138,859,316,852,353,677,353,677" href="https://www.daum.net" target="" /><!-- Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) -->
+    </map>
+</body>
+</html>

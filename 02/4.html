@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+
+        h3 ~ p {color: blue;} 
+        table, td, th {border: 1px solid;}
+        td, th {padding: 16px;}
+        /*td {border: 1px solid;}
+        th {border: 1px solid;} 
+        타입 선택자로 길게 늘어놓기보단 콤마 , 그룹선택자를 쓰면 좋다*/
+        /*  
+            
+            클래스 이름 작명법
+            영소문자 구분기호 -(하이픈)
+            숫자 특수문자는 순번 때 숫자 사용 leading zero
+            
+
+            css에서는 카멜은 쓰지 않는다
+
+            시작이름 영문대문자,숫자,특수문자로 시작 불가
+            _(언더스코어,언더바) 파일명, 폴더, 이미지에 사용
+            -(하이픈)
+            id말고 class사용 권장
+
+            
+
+        */
+        table, th, td, tr {border: 3px solid; background-color: #f90;}
+        td, tr {padding: 30px;color: #fff;}
+        h2 ~ ul {color: rgb(255, 0, 98);}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2">제목</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <p>이전에 언급</p> <!-- ~ 형제 선택자이지만 자기보단 먼저 생성된 경우는 선택 대상에서 제외된다. -->
+    <h3>엑스포 안내</h3>    
+    <p>책자를 배포하고 있습니다</p>
+    <p>안내 데스크를 활용하시기 바랍니다.</p>
+    <ul>
+        <li><p>주중에는 정오 이벤트가 있습니다.</p></li>
+        <li><p>주말에는 자정 이벤트가 있습니다.</p></li>
+    </ul>
+    <p>9월에는 가을 이벤트가 시작됩니다</div></p>
+
+    <!-- 1 -->
+    <table>
+        <tr>
+            <th rowspan="2">1번</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>            
+        </tr>
+    </table>
+    <h2>엑스포</h2>
+    <p>10</p>
+    <p>20</p>
+    <ul>
+        <li><p>30</p></li>
+        <li><p>40</p></li>
+    </ul>
+    <p>50</p>
+
+</body>
+</html>

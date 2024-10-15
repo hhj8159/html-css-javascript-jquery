@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        li {display: inline;}
+        li a {
+            display: inline-block; width: 20px; height: 40px;
+            background: url('https://www.google.com/images/nav_logo321.webp') -74px 0;
+            background-size: 167px;
+            text-indent: -9999px;
+        }
+        li a:hover {background-position-x: -53px;}
+        /*            
+            linear-gradition(방향, 컬러스톱, [컬러스톱, ...])
+            to right :  왼쪽에서 오른쪽으로
+            각도는 위에서부터 0도 시계방향으로 90도, 180도, 270도
+        */
+        body {background: linear-gradient(90deg, white 90%, black);}
+        div:not(.multi-background) {height: 50px;}
+        .linear-repeat {background: repeating-linear-gradient(45deg, white 20px, black 40px);}
+        .linear-repeat-pattern {background: 
+            repeating-linear-gradient(45deg, white 0, white 20px, black 20px, black 40px);}
+        .radial {height: 200px; width: 100px; background: radial-gradient(circle at 10px 50%, white, blue);}
+        .multi-background {width: 150px;}
+        .multi-background div {width: 150px; height: 150px; border: 1px solid;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+    </ul>    
+    <div class="linear-repeat"></div>
+    <div class="linear-repeat-pattern"></div>
+    <div class="radial"></div>
+
+    <div class="multi-background">
+        <div></div>
+    </div>
+</body>
+</html>
