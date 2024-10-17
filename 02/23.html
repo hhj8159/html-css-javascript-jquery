@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* float 너무 중요함 : 아래로 흘러야할 컨텐츠를 옆에서 흐르도록 배치*/
+        /* float left는 왼쪽부터 1 2 3 4 5 순의 배치, right는 오른쪽부터 5 4 3 2 1순의 배치 */
+        /* float는 다른 컨텐츠에 지속적으로 영향을 준다. clear로 해제해줘야 */
+        .box, img { border: 1px solid;}
+        .box {width: 500px; padding: 10px;}
+        img {margin: 20px; float: right;}
+
+        .float-wrap {width: 500px; border: 1px solid;}
+        .float-box {
+            width: 100px; height: 100px; background-color: red;
+            /* display: inline-block; */
+            text-align: center;
+            /* float: left; */
+        }
+        .float-left {
+            float: left;
+        }
+        .float-right {
+            float: right;
+        }
+        .clearfix::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+    </style>    
+</head>
+<body>
+    <div class="box">
+        <img src="img/bg_animation.png">
+        <p>
+            대한민국은 민주공화국이다. 국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을 심의한다.
+            국가안전보장회의는 대통령이 주재한다. 국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을 심의한다.
+        </p>
+    </div>    
+    <div class="float-wrap cleatfix">
+        <div class="float-box float-right">box1</div>
+        <div class="float-box float-right">box2</div>
+        <div class="float-box float-left">box3</div>
+        <!-- <div class="float-box clear-right">box4</div>
+        <div class="float-box">box5</div>         -->
+    </div>
+</body>
+</html>

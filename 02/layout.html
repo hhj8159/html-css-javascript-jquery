@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>2-col-layout</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .clearfix::after {display: block; content: ''; clear: both;}
+        
+        body {margin: 0;}
+        header, footer {text-align: center; background-color: #fc3; padding: 16px;}
+        main {width: 1280px; margin: 0 auto;}
+        ul {padding: 0; list-style: none; margin: 0;}
+
+        /* */
+        .gnb {background-color: #222;}
+        .gnb > ul {position: relative;}
+        .gnb > ul > li {float: left; margin: 16px 40px;}
+        .gnb > ul > li > a {color: #eee; text-decoration: none;}
+        .gnb > ul > li > a:hover {color: #fc3; text-shadow: 0 0 1px #eee;}
+
+        .gnb li ul {display: none;}
+        .gnb:hover ul ul, .gnb:hover div {display: block;}
+
+        .gnb ul ul {position: absolute; top: 60px; z-index: 99;}
+        .gnb ul ul li {margin: 20px 0;}
+        .gnb > div {position: absolute; width: 1280px; height: 200px;
+            background-color: #222; display: none;}
+        
+        /* 본문 영역 */ 
+        main > div {min-height: calc(100vh - 230px);}    
+        .content, .side {margin: 10px; padding: 10px; float: left;}
+        .content {width: 800px;}
+        .side {width: 400px;}
+        .side p {margin-bottom: 5px;}
+        .side label {font-size: 12px;}
+        .side input, .side button {padding: 8px; margin-bottom: 20px; width: 200px;
+            box-sizing: border-box;}
+            
+        /* 레이어 팝업 영역 */
+        .layer-popup {width: 420px; position: absolute; top: 150px; left: calc(50% - 210px);}    
+        .layer-popup img {display: block;}
+        .layer-popup p {background-color: rgb(127, 197, 255); color:#eee; margin: 0; padding: 8px; font-size: 13px;}
+        .layer-popup p input {vertical-align: middle;}
+        .layer-popup p a {color: #eee; text-decoration: none; float: right;}
+        /*float사용시 합계가 폭을 넘지않도록*/   
+    </style>
+</head> 
+<body>
+    <div class="wrap">
+        <header>
+            <h1>제목</h1>
+        </header>
+
+        <main>
+            <nav class="gnb">
+                <ul class="clearfix">
+                    <li><a href="#">메뉴1</a>
+                        <ul>
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴2</a>
+                        <ul>
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴3</a>
+                        <ul>
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴4</a>
+                        <ul>
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div></div>
+            </nav>
+            <div class="clearfix">
+                <section class="content">
+                    <h2>메인컨텐츠</h2>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                    <p>텍스트</p>
+                </section>
+                <aside class="side">
+                    <form>
+                        <p><label for="id">아이디</label></p>
+                        <input name="id" id="id" placeholder="아이디를 입력하세요">
+                        <p><label for="pw">비밀번호</label></p>
+                        <input name="pw" id="pw" placeholder="비밀번호를 입력하세요">
+                        <br>
+                        <button>로그인</button>
+                    </form>
+                    <ul>
+                        <li>광고1</li>
+                        <li>광고2</li>
+                        <li>광고3</li>
+                        <li>광고4</li>
+                    </ul>
+                </aside>
+            </div>
+        </main>
+
+        <footer>
+            꼬릿말
+        </footer>
+    </div>
+    <div class="layer-popup">
+        <img src="https://image.yes24.com/momo/scmfiles/AdvertFiles/202410/2575682_241011091003.jpg" alt="서적">
+        <p class="clearfix">
+            <span>오늘은 그만 보기 <input type="checkbox"></span>
+            <a href="#">닫기</a>
+        </p>
+        
+    </div>    
+</body>
+</html>
