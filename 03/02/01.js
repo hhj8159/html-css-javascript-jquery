@@ -84,6 +84,7 @@ console.log(10);
     
 })("js");
 
+
 function process() {
     return; // 리턴에서 호출 위치(process())로 되돌아간다.
     var kor = 90;
@@ -93,6 +94,8 @@ function process() {
     return avg;
 }
 console.log("홍길동 학생의 평균은 " + process());
+
+
 
 // 두 수를 입력 받아 그 중 큰 값을 반환하는 함수
 function max(m1, m2) { 
@@ -118,6 +121,8 @@ function max2() {
     console.log(arguments.length);     
 }
 console.log(max2(10, 20, 30, 40));
+
+
 
 
  
