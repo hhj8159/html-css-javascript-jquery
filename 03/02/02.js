@@ -172,9 +172,6 @@ let obj = { // 타입이 함수면 메서드
     z:function(){}
 };
 
-class Student { // 
-    
-}
-let student = new Student();
+console.log(obj.x);
 
-////////
+
