@@ -15,6 +15,8 @@
         // console.log(moment.locale());
 
         const now = new Date();
+        now.setMonth(12);
+        now.setDate(1);
         // now.setDate(24);
         // const m = moment(now);
         // const mid = moment('2023/10/23', 'YYYY/MM/DD');
@@ -23,17 +25,17 @@
         // console.log(m.format('yyyy/MM/DD HH:mm:ss'));
         const days = ['일', '월', '화', '수', '목', '금', '토'];
         const lastDates = [31, 28, 31 ,30, 31, 30, 31, 31, 30, 31 ,30, 31];
-        now.setDate(1);
 
-        const firstDay = now.getDate();
+        const firstDay = now.getDay();
         let lastDate = lastDates[now.getMonth()];
         const year = now.getFullYear();
         if(now.getMonth() == 1 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             lastDate = 29;
         } 
 
-        let calStr = '';
+        let calStr = ''; 
         calStr += '<table>';
+        calStr += `<caption><h2>${now.getFullYear()}/${now.getMonth()+1}</h2></caption>`
         // 제목부분
         calStr += '<tr>';
         // 7회 반복    
@@ -42,23 +44,31 @@
         }
         calStr += '</tr>';
         // 날짜부분
+        console.log(lastDate + firstDay);
+        
         calStr += '<tr>';
-            for(let i = 1 - firstDay; i <= lastDate; i++) {
-                calStr += `<td>${i}</td>`;
-                if(i % 7 == (7 - firstDay) % 7) {
-                    calStr += '</tr><tr>'
-                }
+        const endPoint = parseInt((lastDate + firstDay + 6) / 7) * 7 - firstDay;
+        for(let i = 1 - firstDay; i <= endPoint; i++) {
+            if(i < 1 || i > lastDate) {
+                calStr += '<td></td>'
             }
+            else {
+                calStr += `<td>${i}</td>`;
+            }
+            if(i % 7 == (7 - firstDay) % 7) {
+                calStr += '</tr><tr>'
+            }
+        }
         calStr += '</tr>';        
         calStr += '</table>';
 
         document.write(calStr);
 
-
+        // window.opener
         
     </script>
     <style>
-        /* table, th, td {border: 1px solid black;} */
+        table, th, td {border: 1px solid black;}
         th {border-bottom: 3px solid #222;}
         table {border-collapse: collapse; margin: 0 auto;}
         th, td {padding: 25px; text-align: center;}
