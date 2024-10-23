@@ -1,1 +1,1 @@
-const regExp = /[A-Za-z0-9]/gi; // g, i 순서 상관없음
+const regExp = /[A-Za-z0-9]/gi; // i, g 순서 상관없음
