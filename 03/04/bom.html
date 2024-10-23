@@ -19,7 +19,7 @@
 
         const winProxy = open('moment.html', '', 'width=400,height=400,top=100  ');
         winProxy.document.write("<p>부모가씀</p>");
-        winProxy.moveTo();
+        // winProxy.moveTo();
         setInterval(function() {
             winProxy.moveBy(10,10);
         }, 300)
@@ -34,7 +34,7 @@
         document.getElementById("btn").addEventListener("click", function() {
             const input = document.getElementById("linkAddr");
             confirm(input.value + "의 위치로 이동하시겠습니까?") && (location.href = input.value)
-        })
+        });
     </script>
 </body>
 </html>
