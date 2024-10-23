@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        const now = new Date
+        now.setMonth();
+        now.setDate(1);
+
+        const days = ['일', '월', '화', '수', '목', '금', '토'];
+        const lastDates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        const firstDay = now.getDay();
+        let lastDate = lastDates[now.getMonth()];
+        
+        const year = now.getFullYear();
+        if(now.getMonth() == 1 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            lastDate = 29;
+        }
+
+        let calStr = '';
+        calStr += '<table>';
+        calStr += `<caption><h2>${now.getFullYear()}/${now.getMonth()+1}</h2></caption>`;
+        calStr += '<>'
+
+    </script>
+    <style>
+        /* table, th ,td {border: 1px solid #222;} */
+        table {margin: 0 auto; border-collapse: collapse;}
+        th {border-bottom: 2px solid #222;}
+        th, td {padding: 10px; text-align: center;}
+        tr > *:first-child {color: red;} 
+        tr > *:last-child {color: blue;} 
+    </style>
+</head>
+<body>
+    <!-- <table>
+        <tr>
+            <th>일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        
+    </table>     -->
+</body>
+</html>
