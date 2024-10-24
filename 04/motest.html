@@ -7,14 +7,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script>
         const now = new Date
-        now.setMonth();
+        now.setMonth(10);
         now.setDate(1);
-
+        
         const days = ['일', '월', '화', '수', '목', '금', '토'];
         const lastDates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+       
         const firstDay = now.getDay();
-        let lastDate = lastDates[now.getMonth()];
-        
+        let lastDate = lastDates[now.getMonth()];        
         const year = now.getFullYear();
         if(now.getMonth() == 1 && year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             lastDate = 29;
@@ -23,14 +23,44 @@
         let calStr = '';
         calStr += '<table>';
         calStr += `<caption><h2>${now.getFullYear()}/${now.getMonth()+1}</h2></caption>`;
-        calStr += '<>'
+        
+        // 제목부분
+        calStr += '<tr>';
+        // 7회 반복
+        for(let val of days) {
+            calStr += `<th>${val}</th>`;
+        }
+        calStr += '</tr>';
+
+        // 날짜부분
+        console.log(lastDate + firstDay);
+
+        calStr += '<tr>';
+        const endPoint = parseInt((lastDate + firstDay + 6) / 7) * 7 - firstDay;
+        for (let i = 1 - firstDay; i <= endPoint; i++) {
+            if(i < 1 || i > lastDate){ 
+                calStr += '<td></td>';
+            }
+            else {
+                calStr += `<td>${i}</td>`;
+            }
+            if(i % 7 == (7 - firstDay) % 7) {
+                calStr += '</tr><tr>';
+            }
+            
+        }
+        calStr += '</tr>';
+        calStr += '</table>';
+
+        document.write(calStr);
+
 
     </script>
     <style>
         /* table, th ,td {border: 1px solid #222;} */
-        table {margin: 0 auto; border-collapse: collapse;}
-        th {border-bottom: 2px solid #222;}
-        th, td {padding: 10px; text-align: center;}
+        table {border-collapse: collapse; margin: 0 auto;}
+        th {border-bottom: 3px solid #222;}
+        th, td {padding: 25px; text-align: center;}
         tr > *:first-child {color: red;} 
         tr > *:last-child {color: blue;} 
     </style>
