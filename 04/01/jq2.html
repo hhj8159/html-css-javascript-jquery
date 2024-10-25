@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script>
+        // $(함수) >> ready
+        // $(문자열) >> selector를 활용 jQuery Object
+        // $(객체) >> 해당 객체를 jQuery Object
+        // 자체적인 배열로 관리, 알아서 순환반복처리
+        // getter css("문자열")
+        // setter .css(문자열, 문자열), .css(문자열, 함수), css(객체)
+        // attr 속성가져오고 변경하기위함
+        $(function() { 
+            const text = document.getElementById("text");
+            text.style.color = 'blue';
+            $(text).css('color', 'green');
+            $(text)[0].style.color = 'red';
+
+            console.log($("p").length);
+            $("p").css('font-size', function(i, j) {
+                console.log(i, j);
+                return i % 2 ? '32px' : j;
+                
+            })
+             
+        })
+        
+
+    </script>
+</head>
+<body>
+    <p id="text">헬로</p>
+    <p>가나다라</p>
+    <p>가나다라</p>
+    <p>가나다라</p>
+    <p>가나다라</p>
+    <p>가나다라</p>
+    <p>가나다라</p>
+    <p>가나다라</p>
+    <p>가나다라</p>
+</body>
+</html>

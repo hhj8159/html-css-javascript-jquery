@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $("li:nth-child(3)").css("color", "green");
+            $("li")
+                .filter(":nth-child(4)") // 들여쓰기로 넣어라
+                .css("color", "red")
+                .text("변경")
+            .end()
+            .css("background", "orange")
+                .eq(-2) // eq=equal() 일치하는 것 찾기 -2 뒤에서 두번째
+                .css({fontSize:'2em'})
+            .end()
+                .filter(":gt(4):not(:nth-child(7))")
+                .css("text-decoration", "underline");
+            $("input:text").css("width", "50%");
+            $("input[type='text']").css("padding", ".5em");//속성선택자를 썼다
+            // 3뎁스 정도부터, 반복되는 부분 클래스, 아이디 
+            
+        });
+        // :has()
+    </script>
+
+
+</head>
+<body>
+    <ol>
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+    </ol>
+    <input >
+    <input type="text">
+    <input >
+</body>
+</html>

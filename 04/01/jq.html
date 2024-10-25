@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script>
+        $.noConflict(); // $와 JQuery가 다르게 만들었다
+        console.log(jQuery, typeof jQuery, jQuery === $);
+        console.log($, typeof $);
+        
+        (function($) {
+            $(function() {
+                $("p") // 달러에 의해 래핑된 p태그를 반환한다
+                .css({color:'red', "text-decoration" : 'underline'})
+                .click(function() {
+                    alert($(this).text());
+                })
+                .hover(function() {
+                    $(this).css('background', 'orange')
+                }, function() {
+                    $(this).css('background', 'transparent')
+                })
+            })
+        })(jQuery); //이 껍데기가 즉시실행함수, $ JQuery, 이름 충돌시 이렇게 쓸 수 있다, (function() {})
+        window.onload = function() {
+            jQuery("p").css("border", "1px solid black");
+        }
+
+        jQuery(document).ready(function() {
+            console.log(1);
+        })
+        jQuery().ready(function() {
+            console.log(2);            
+        })
+        jQuery(function() {
+            console.log(3);            
+        })
+
+    </script>
+</head>
+<body>
+    <p>hello jQuery</p>
+    <p>hello jQuery</p>
+    <p>hello jQuery</p>
+    <p>hello jQuery</p>
+</body>
+</html>
