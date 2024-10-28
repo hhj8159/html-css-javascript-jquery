@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            // console.log($("div:nth-child(1)").add("div:nth-child(2)").end().text());           
+            // console.log($("body").children());
+
+            // is, hasClass, hasAttr
+            // console.log($("div").is(".abc"));
+            $("div").each(function(i, item) {
+                // console.log(i, item, $("div")[i],this);
+                console.log($(item).is(".abc"));
+                
+            });// each쓰는게 제일 괜찮다
+
+            for(let i = 0 ; i < $("div").length ; i++) {
+                console.log($("div").eq(i).text());                
+            }
+            
+            for(let i in $("div")) {
+                if(i >= 0 && i < $("div").length) {
+                    console.log($($("div")[i]).text());
+                }                
+            }
+
+            // $("selector").each(할일)
+            // $.each(객체, 할일)
+
+            $("div").each(function() {
+                // const $this = $(this); // 변수를 써야 아래 this와 같아진다
+                // $(this).click(function() {
+                //     $(this) === $this;
+                // })
+            })
+        });      
+    </script>
+</head>
+<body>
+    <div class="abc">요소1</div>
+    <div class="def">요소2</div>
+    <div class="def">요소3</div>
+</body>
+</html>
