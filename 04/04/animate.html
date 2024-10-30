@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .box {width: 100px; height: 100px; background-color: olive; cursor: pointer;}
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script>
+        // box클래스 클릭시 콜백 지정, box클래스 더블 클릭시 콜백 지정
+        $(function() {
+            $(".box").on("click dblclick", function(e) {
+                console.log(e.type);
+                switch (e.type) {
+                    case "click":
+                        $(this).stop().delay(500).animate({width:'+=100', height: '+=100'}, 500)
+                        break;
+                    case "dblclick":
+                        $(this).stop().animate({width:'-=100', height: '-=100'}, 500)
+                        break;
+                        
+                }
+            });
+                
+            // $(".box").click(function() {
+            //     console.log("box");
+            // })
+            // $(".box").dblclick(function() {
+            //     console.log("dblbox");
+            // })
+        })
+                
+                
+                
+    </script>
+</head>
+<body>
+    <div class="box"></div>    
+</body>
+</html>
