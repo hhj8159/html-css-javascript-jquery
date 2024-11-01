@@ -23,7 +23,7 @@
                 <input type="text" class="form-control" placeholder="도로명검색">
                 <button class="btn btn-success" type="button" id="search">검색</button>
             </div>
-            <ul class="list-group">
+            <ul class="list-group search-result-wrap">
                 <!-- <li class="list-group-item"><a href="#" class="small">서울특별시 강남구 논현로 4 (개포동)</a></li>
                 <li class="list-group-item"><a href="#" class="small">서울특별시 강남구 논현로 4 (개포동)</a></li>
                 <li class="list-group-item"><a href="#" class="small">서울특별시 강남구 논현로 4 (개포동)</a></li>
@@ -64,15 +64,15 @@
                         str += `<li class="list-group-item"><a href="#" class="small">
                             ${data.results.juso[i].roadAddr}</a></li>`;
                     }
-                    $("ul").html(str);
+                    $("ul.search-result-wrap").html(str);
                                              
                 },
                 error : function(xhr, msg) {
                     console.log(msg);
                 }
             })
-            $("ul").on("click", "a", function() {
-                $("#roadAddr").val($(this).text());
+            $("ul.search-result-wrap").on("click", "a", function() {
+                $("#roadAddr").val($(this).text().trim());
                 $(this).closest("ul").empty();
             })
                 
