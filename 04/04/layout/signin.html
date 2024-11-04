@@ -41,26 +41,20 @@
             </ul>
         </nav>
         <main class="container">
-            <h1 class="text-center mt-5">회원가입</h1>
+            <h1 class="text-center mt-5">로그인</h1>
             <form name="frm" 
             class="mx-auto col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4 col-xxl=3 card p-2 mt-5">
                 <input type="text" class="form-control my-3" id="id" placeholder="아이디" name="id">
                 <input type="password" class="form-control my-3" id="pwd" placeholder="비밀번호" name="pwd">
-                <input type="text" class="form-control my-3" id="name" placeholder="이름" name="name">
-                <input type="email" class="form-control my-3" id="email" placeholder="이메일" name="email">
-                <input type="text" class="form-control my-3" id="roadAddr" placeholder="" name="roadAddr" readonly>
-                <input type="text" class="form-control my-3" id="name" placeholder="상세주소" name="name">
-                <div class="input-group my-3">
-                    <input type="text" class="form-control" placeholder="도로명검색">
-                    <button class="btn btn-success" type="button" id="search">검색</button>
+                
+                <div class="form-check form-switch my-3" >
+                    <input class="form-check-input" type="checkbox" id="mySwitch" name="remember-id" value="yes">
+                    <label class="form-check-label" for="mySwitch">아이디 기억</label>
                 </div>
-                <ul class="list-group search-result-wrap">
-
-                </ul>    
-                <button class="btn btn-primary">가입하기</button>
+                <button class="btn btn-primary">로그인</button>
             </form>
         </main>
-        <footer class="bg-warning text-center p-4">
+        <footer class="bg-warning text-center p-4 mt-5">
             <address>서울특별시 구로구 디지털로 306 대륭포스트 2차 2층 더조은 아카데미 204호</address>
             <p>All rights resereved &copy; copyright.</p>
         </footer>
